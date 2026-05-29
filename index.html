@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title></title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="src/output.css" />
+        <link rel="stylesheet" href="src/style0.css" />
+    </head>
+    <body class="relative font-[vazir]" dir="rtl">
+        <!-- Backdrop -->
+        <div id="bDrop" class="fixed bg-black/60 inset-0 z-10 items-center justify-center overflow-hidden hidden">
+            <div class="w-120 h-120 bg-white rounded-2xl relative flex flex-col items-center justify-center">
+                <img src="media/close.png" class="h-8 w-8 absolute top-3 left-3 cursor-pointer" onclick="closeLoginWindow();">
+                <!-- Step 1 Phone Number -->
+                <div id="step1" class="text-neutral-700 flex flex-col items-center">
+                    <h1 class="text-3xl">خوش آمدید!</h1>
+                    <h2 class="text-xl">برای ورود، شماره همراه خود را وارد کنید -</h2>
+                    <div class="flex items-center justify-center gap-3 mt-14" dir="ltr">
+                        <img src="media/iran.png" class="h-10">
+                        <span class="text-2xl px-1">+98</span>
+                        <input id="pNumber" class="text-2xl py-2 px-3.5 border-2 border-neutral-300 rounded-xl w-60 tracking-widest text-center">
+                    </div>
+                    <button class="px-7 py-3 mt-16 rounded-2xl border-3 border-amber-600 text-2xl text-amber-600 font-medium hover:bg-amber-600 hover:text-white hover:cursor-pointer transition delay-75 duration-300 ease-in-out"
+                    onclick="goToStep2();">
+                    ادامه
+                    </button>
+                </div>
+                <!-- Verification Code -->
+                <div id="step2" class="text-neutral-700 hidden flex-col items-center">
+                    <h1 class="text-3xl">کد ورود برای شما پیامک شد</h1>
+                    <h2 class="text-xl">لطفا آن را وارد کنید</h2>
+                    <div class="flex items-center justify-center gap-3 mt-14 pl-14" dir="ltr">
+                        <input id="vCode" class="text-2xl py-2 px-3.5 border-2 border-neutral-300 rounded-xl w-40 tracking-widest text-center">
+                        <span class="text-xl px-1 text-amber-600">2:00</span>
+                    </div>
+                    <div class="flex justify-center gap-5">
+                        <button class="px-7 py-3 mt-16 rounded-2xl border-3 border-neutral-400 text-2xl text-neutral-400 font-medium hover:bg-neutral-400 hover:text-white hover:cursor-pointer transition delay-75 duration-300 ease-in-out"
+                        onclick="backToStep1();">
+                        بازگشت
+                        </button>
+                        <button class="px-7 py-3 mt-16 rounded-2xl border-3 border-amber-600 text-2xl text-amber-600 font-medium hover:bg-amber-600 hover:text-white hover:cursor-pointer transition delay-75 duration-300 ease-in-out"
+                        onclick="closeLoginWindow();">
+                        ادامه
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sign in Window -->
+        <!-- Container for the x-borders -->
+        <div class="mx-auto max-w-7xl">
+            <!-- Top row container -->
+            <div
+                class="flex flex-row items-center justify-between pt-4">
+                <!-- Logo -->
+                <a href="/">
+                    <img src="media/logo2.png" class="h-16" />
+                </a>
+                <!-- Navigation -->
+                <nav
+                    class="flex flex-row items-center justify-center font-medium text-lg text-rose-700">
+                    <span
+                        class="px-5 py-3.5 mx-2 transition delay-75 duration-300 ease-in-out bg-white hover:bg-rose-700 hover:text-white rounded-2xl border-3 border-rose-700"
+                        >ثبت سفارش</span
+                    >
+                    <span
+                        class="px-5 py-3.5 mx-2 transition delay-75 duration-300 ease-in-out bg-white hover:bg-rose-700 hover:text-white rounded-2xl"
+                        >قیمت‌دهی</span
+                    >
+                    <span
+                        class="px-5 py-3.5 mx-2 transition delay-75 duration-300 ease-in-out bg-white hover:bg-rose-700 hover:text-white rounded-2xl"
+                        >مقالات مفید</span
+                    >
+                    <a href="/about.html">
+                        <span
+                            class="px-5 py-3.5 mx-2 transition delay-75 duration-300 ease-in-out bg-white hover:bg-rose-700 hover:text-white rounded-2xl"
+                            >درباره ما</span
+                        >
+                    </a>
+                    <span
+                        class="px-5 py-3.5 mx-2 transition delay-75 duration-300 ease-in-out bg-white hover:bg-rose-700 hover:text-white rounded-2xl"
+                        >تماس با ما</span
+                    >
+                </nav>
+                <!-- Account -->
+                <div
+                    class="flex flex-row items-center justify-center gap-3">
+                    <img src="media/cart.png" class="h-10 cursor-pointer" />
+                    <img src="media/avatar.png" class="h-10 cursor-pointer" onclick="bDropOn();" />
+                </div>
+            </div>
+        </div>
+        <!-- Main Banner -->
+        <div class="bg-[url(/media/3.jpg)] bg-contain mt-4 w-full aspect-[2.59336] relative">
+            <div class="absolute bottom-20 right-0 left-0 h-28 flex justify-center">
+                    <button class="px-7 py-3 rounded-3xl border-4 border-white text-white text-4xl font-medium hover:bg-white hover:text-rose-700 hover:cursor-pointer transition delay-75 duration-300 ease-in-out">
+                        شروع کنید!
+                    </button>
+            </div>
+        </div>
+        <!-- Why Choose Us -->
+        <div class="mx-auto max-w-7xl mt-20">
+            <div class="text-center text-6xl font-medium text-amber-600">
+                چرا لیزران را انتخاب کنید
+            </div>
+            <!-- Cards Container -->
+            <div class="flex flex-row gap-12 justify-center mt-10 text-amber-600">
+                <!-- Cards Start Here -->
+                <div class="whyCards">
+                    <div class="w-full aspect-square rounded-3xl bg-[url(/media/4.jpg)] bg-contain">
+                        <div class="w-full h-full flex items-center text-center hover:bg-black/50 rounded-3xl">
+                            <span class="desc invisible text-white text-xl px-4">امکان سفارش برش لیزری از نزدیکترین کارگاه به شما</span>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5 text-3xl">
+                        در نزدیکی شما
+                    </div>
+                </div>
+                <div class="whyCards">
+                    <div class="w-full aspect-square rounded-3xl bg-[url(/media/5.jpg)] bg-contain">
+                        <div class="w-full h-full flex items-center text-center hover:bg-black/50 rounded-3xl">
+                            <span class="desc invisible text-white text-xl px-4">متعهد به تحویل به موقع و سروقت کار هستیم</span>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5 text-3xl">
+                        زمان مهم است
+                    </div>
+                </div>
+                <div class="whyCards">
+                    <div class="w-full aspect-square rounded-3xl bg-[url(/media/6.jpg)] bg-contain">
+                        <div class="w-full h-full flex items-center text-center hover:bg-black/50 rounded-3xl">
+                            <span class="desc invisible text-white text-xl px-4">بهینه‌سازی بهای سفارش از محل بازخرید ضایعات سفارش‌های شما، قبل از سفارش!</span>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5 text-3xl">
+                        تخفیف حداکثری
+                    </div>
+                </div>
+                <div class="whyCards">
+                    <div class="w-full aspect-square rounded-3xl bg-[url(/media/7.jpg)] bg-contain">
+                        <div class="w-full h-full flex items-center text-center hover:bg-black/50 rounded-3xl">
+                            <span class="desc invisible text-white text-xl px-4">امکان انتخاب کارگاه‌هایی که تجربه‌های خوبی برایمان رقم زده‌اند</span>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5 text-3xl">
+                        اعتماد دیگران
+                    </div>
+                </div>
+                <div class="whyCards">
+                    <div class="w-full aspect-square rounded-3xl bg-[url(/media/8.jpg)] bg-contain">
+                        <div class="w-full h-full flex items-center text-center hover:bg-black/50 rounded-3xl">
+                            <span class="desc invisible text-white text-xl px-4">رابط کاربری آسان برای سرعت، کیفیت و راحتی بیش از پیش</span>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5 text-3xl">
+                        خیال راحت
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Steps to Order Container -->
+        <div class="mx-auto max-w-340 mt-10">
+            <!-- Step 1 Design -->
+            <div class="flex flex-row items-center justify-center gap-10 text-amber-600 mt-10">
+                <div class="flex flex-none items-center justify-center w-24 h-24 rounded-full bg-amber-600 text-white text-4xl font-semibold">
+                    1
+                </div>
+                <div class="flex h-72 flex-initial border-6 border-amber-600 rounded-3xl">
+                    <div class="w-full h-full px-6 py-8">
+                        <h1 class="text-5xl font-medium text-center">طراحی</h1>
+                        <p class="mt-6 text-lg text-center">
+                            قدم اول در برش لیزری، طراحی محصولی است که مایل به ساخت آن هستید.
+                            <br>
+                            از دل طراحی،
+                            <span class="px-1.5 py-0.5 text-white bg-amber-600 rounded-md">نقشه‌ی برش در فرمت DFX</span>
+                            بدست می‌آید که ابعاد و اندازه‌های کار شما را مشخص می‌کند.
+                        </p>
+                    </div>
+                </div>
+                <img src="media/001.jpg" class="h-72 rounded-2xl">
+                <img src="media/002.jpg" class="h-72 rounded-2xl">
+            </div>
+            <!-- Step 2 Design -->
+            <div class="flex flex-row items-center justify-center gap-10 text-amber-600 mt-10">
+                <div class="flex flex-none items-center justify-center w-24 h-24 rounded-full bg-amber-600 text-white text-4xl font-semibold">
+                    2
+                </div>
+                <img src="media/101.jpg" class="h-72 rounded-2xl">
+                <div class="flex h-72 flex-initial border-6 border-amber-600 rounded-3xl">
+                    <div class="w-full h-full px-6 py-8">
+                        <h1 class="text-5xl font-medium text-center">آپلود نقشه</h1>
+                        <p class="mt-6 text-lg text-center">
+                            حال نوبت آن است که نقشه‌ی خود را آپلود کنید!
+                            <br>
+                            ما
+                            <span class="px-1.5 py-0.5 text-white bg-amber-600 rounded-md">بصورت خودکار</span>
+                            ابعاد کلی و طول برش را برایتان
+                            <span class="px-1.5 py-0.5 text-white bg-amber-600 rounded-md">محاسبه می‌کنیم</span>
+                            و انجام‌پذیری پروژه‌تان را بررسی می‌کنیم.
+                        </p>
+                    </div>
+                </div>
+                <img src="media/102.jpg" class="h-72 rounded-2xl">
+            </div>
+            <!-- Step 3 Design -->
+            <div class="flex flex-row items-center justify-center gap-10 text-amber-600 mt-10">
+                <div class="flex flex-none items-center justify-center w-24 h-24 rounded-full bg-amber-600 text-white text-4xl font-semibold">
+                    3
+                </div>
+                <img src="media/201.jpg" class="h-72 rounded-2xl">
+                <img src="media/202.jpg" class="h-72 rounded-2xl">
+                <div class="flex h-72 flex-initial border-6 border-amber-600 rounded-3xl">
+                    <div class="w-full h-full px-6 py-8">
+                        <h1 class="text-5xl font-medium text-center">انتخاب ورق</h1>
+                        <p class="mt-6 text-lg text-center">
+                            آلیاژ، ضخامت، ابعاد کلی.
+                            <br>
+                            با دانستن این سه پارامتر، می‌توانیم بهای انجام پروژه را محاسبه و به شما اعلام کنیم.
+                            ورق را می‌توانید خودتان تامین کنید یا اگر ما داشته باشیم،
+							<span class="px-1.5 py-0.5 text-white bg-amber-600 rounded-md">به همان میزانی که نیاز دارید</span>
+							از ما بخرید!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Step 4 Design -->
+            <div class="flex flex-row items-center justify-center gap-10 text-amber-600 mt-10">
+                <div class="flex flex-none items-center justify-center w-24 h-24 rounded-full bg-amber-600 text-white text-4xl font-semibold">
+                    4
+                </div>
+                <img src="media/301.png" class="h-72 rounded-2xl">
+                <div class="flex h-72 flex-initial border-6 border-amber-600 rounded-3xl">
+                    <div class="w-full h-full px-6 py-8">
+                        <h1 class="text-5xl font-medium text-center">محاسبه و پرداخت</h1>
+                        <p class="mt-6 text-lg text-center">
+                            اینجا می‌توانید کارگاه مد نظر خود را بر اساس مکان، قیمت و امکاناتی که برای سفارشتان نیاز دارید انتخاب کنید.
+                            <br>
+                            اگر از ما ورق تهیه کرده باشید،
+                            <span class="px-1.5 py-0.5 text-white bg-amber-600 rounded-md">ورق استفاده نشده</span>
+                            را از شما می‌خریم و
+                            <span class="px-1.5 py-0.5 text-white bg-amber-600 rounded-md">به عنوان تخفیف</span>
+                            روی سفارشتان لحاظ می‌کنیم!
+                        </p>
+                    </div>
+                </div>
+                <img src="media/302.png" class="h-72 rounded-2xl">
+            </div>
+            <!-- Step 5 Design -->
+            <div class="flex flex-row items-center justify-center gap-10 text-amber-600 mt-10">
+                <div class="flex flex-none items-center justify-center w-24 h-24 rounded-full bg-amber-600 text-white text-4xl font-semibold">
+                    5
+                </div>
+                <div class="flex h-72 flex-initial border-6 border-amber-600 rounded-3xl">
+                    <div class="w-full h-full px-6 py-8">
+                        <h1 class="text-5xl font-medium text-center">ارسال و تحویل</h1>
+                        <p class="mt-6 text-lg text-center">
+							ما
+							<span class="px-1.5 py-0.5 text-white bg-amber-600 rounded-md">تضمین می‌دهیم</span>
+							که سفارش‌های شما را سر وقت آماده و ارسال کنیم.
+							<br>
+							در صورتی که مایل به تحویل حضوری هستید، در ساعات کاری منتظر شماییم. در غیر این صورت، کارگاه کار را برایتان بصورت پس‌کرایه ارسال خواهد کرد.
+                        </p>
+                    </div>
+                </div>
+                <img src="media/401.png" class="h-72 rounded-2xl">
+                <img src="media/402.png" class="h-72 rounded-2xl">
+            </div>
+        </div>
+		<!-- Selected Articles -->
+		<div class="bg-amber-600 h-150 mt-20 text-white">
+            <div class="flex gap-6 pt-10 items-center justify-center">
+                <h1 class="text-white text-5xl font-medium pr-40">مقالات برگزیده</h1>
+                <button class="px-7 py-3 rounded-3xl border-4 border-white text-2xl font-medium hover:bg-white hover:text-amber-600 hover:cursor-pointer transition delay-75 duration-300 ease-in-out">
+                        همه‌ی مقالات
+                </button>
+            </div>
+            <!-- Card Container -->
+            <div class="mx-auto max-w-430 grid grid-cols-5 gap-20 mt-12">
+                <!-- Article Card -->
+                <div class="h-95 w-80 border-white border-4 rounded-2xl overflow-hidden hover:scale-105 transition cursor-pointer">
+                    <img src="media/articles/01.png" class="w-full" alt="">
+                    <h1 class="text-2xl px-4 py-5 text-center">
+                        ضخامت و زاویه برش لیزر در مقایسه با انواع دیگر برش
+                    </h1>
+                </div>
+                <!-- Article Card -->
+                <div class="h-95 w-80 border-white border-4 rounded-2xl overflow-hidden hover:scale-105 transition cursor-pointer">
+                    <img src="media/articles/welder.png" class="w-full" alt="">
+                    <h1 class="text-2xl px-4 py-5 text-center">
+                        کاربرد برش لیزری در صنایع گوناگون
+                    </h1>
+                </div>
+                <!-- Article Card -->
+                <div class="h-95 w-80 border-white border-4 rounded-2xl overflow-hidden hover:scale-105 transition cursor-pointer">
+                    <img src="media/articles/environment.png" class="w-full" alt="">
+                    <h1 class="text-2xl px-4 py-5 text-center">
+                        طراحی محیط‌زیست نگر و اقتصادی در صنعت فولاد و فلزات
+                    </h1>
+                </div>
+                <!-- Article Card -->
+                <div class="h-95 w-80 border-white border-4 rounded-2xl overflow-hidden hover:scale-105 transition cursor-pointer">
+                    <img src="media/articles/din.png" class="w-full" alt="">
+                    <h1 class="text-2xl px-4 py-5 text-center">
+                        استانداردهای مربوط به ورق‌های فولادی کربنی و آلیاژی وارداتی و تولید داخل
+                    </h1>
+                </div>
+                <!-- Article Card -->
+                <div class="h-95 w-80 border-white border-4 rounded-2xl overflow-hidden hover:scale-105 transition cursor-pointer">
+                    <img src="media/articles/ind_expo.jpg" class="w-full" alt="">
+                    <h1 class="text-2xl px-4 py-5 text-center">
+                        نمایشگاه‌های صنعت در دنیا و در ایران
+                    </h1>
+                </div>
+            </div>
+		</div>
+        <!-- FAQ Container -->
+        <div class="mx-auto max-w-7xl mt-20 text-amber-600">
+            <div class="flex justify-center gap-6 items-center">
+                <h2 class="text-5xl font-medium pr-50">
+                سوالات متداول - FAQ
+                </h2>
+                <button class="px-7 py-3 rounded-3xl border-4 border-amber-600 text-2xl font-medium hover:bg-amber-600 hover:text-white hover:cursor-pointer transition delay-75 duration-300 ease-in-out">
+                        همه‌ی سوالات
+                </button>
+            </div>
+            <!-- Card Container -->
+            <div class="mt-10">
+                <!-- Card -->
+                <div class="faqCard rounded-xl shadow-md px-5 py-5 flex cursor-pointer" onclick="this.classList.toggle('expanded')">
+                    <img src="media/plus icon.png" class="w-12 h-12 p-2" alt="">
+                    <div class="mr-10 overflow-hidden">
+                        <h3 class="text-2xl mt-2">
+                            سفارش من جزییاتی دارد که کارگاه باید در جریان آن باشد. چگونه می‌توانم آن را به اطلاع کارگاه برسانم؟
+                        </h3>
+                        <p class="mt-8">
+                            در زمان ثبت سفارش این امکان را دارید که برای کارگاه یادداشت اضافه کنید تا کار به صورتی که مایل هستید تحویل شما گردد.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="faqCard rounded-xl shadow-md px-5 py-5 flex cursor-pointer" onclick="this.classList.toggle('expanded')">
+                    <img src="media/plus icon.png" class="w-12 h-12 p-2" alt="">
+                    <div class="mr-10 overflow-hidden">
+                        <h3 class="text-2xl mt-2">
+                            آیا در زمینه طراحی محصول هم همکاری می‌کنید؟
+                        </h3>
+                        <p class="mt-8">
+                            بله! در صورتی که کار شما در حوزه ورقکاری و برش لیزری باشد، برای مشاوره و همکاری در تولید محصول لطفا از طریق تب درباره‌ی ما با ما تماس بگیرید.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="faqCard rounded-xl shadow-md px-5 py-5 flex cursor-pointer" onclick="this.classList.toggle('expanded')">
+                    <img src="media/plus icon.png" class="w-12 h-12 p-2" alt="">
+                    <div class="mr-10 overflow-hidden">
+                        <h3 class="text-2xl mt-2">
+                            در صورتی که کارگاه کار را سر موعد تحویل ندهد چه اتفاقی می‌افتد؟
+                        </h3>
+                        <p class="mt-8">
+                            در صورتی که کارگاه کار را در زمان سررسید تحویل ندهد و علت این موضوع تحویل نگرفتن کار توسط کارفرما، یا مشکلات حمل و نقل نباشد، کارگاه پس از یک روز اخطار دریافت کرده و از روز دوم ملزم به پرداخت روزانه 2 درصد دستمزد به عنوان جریمه به کارفرما است.
+                            سقف جریمه 12 درصد و تا پایان روز هفتم می‌باشد و در صورتی که کارگاه همچنان سفارش را تحویل ندهد، سفارش لغو شده و کل مبلغ پرداخت شده به علاوه‌ی 12 درصد جریمه به کارفرما پرداخت می‌گردد.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="faqCard rounded-xl shadow-md px-5 py-5 flex cursor-pointer" onclick="this.classList.toggle('expanded')">
+                    <img src="media/plus icon.png" class="w-12 h-12 p-2" alt="">
+                    <div class="mr-10 overflow-hidden">
+                        <h3 class="text-2xl mt-2">
+                            شما در کدام شهر فعالیت می‌کنید؟ سفارش ها از کجا ارسال می‌شوند؟
+                        </h3>
+                        <p class="mt-8">
+                            در حال حاضر ما با کارگاه‌های حوالی فتح و شادآباد تهران قرارداد داریم و به زودی امکان خدمت‌رسانی در سراسر کشور را نیز خواهیم داشت.
+                            <br>
+                            در صورتی که امکان برش لیزری را دارید و مایل به همکاری با ما هستید، لطفا از طریق تب ارتباط با ما تماس بگیرید!
+                        </p>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="faqCard rounded-xl shadow-md px-5 py-5 flex cursor-pointer" onclick="this.classList.toggle('expanded')">
+                    <img src="media/plus icon.png" class="w-12 h-12 p-2" alt="">
+                    <div class="mr-10 overflow-hidden">
+                        <h3 class="text-2xl mt-2">
+                            امکان برش چه فلزاتی را دارید؟ آیا سفارش‌های استیل ضد زنگ یا آلومینیوم پذیرفته می‌شوند؟
+                        </h3>
+                        <p class="mt-8">
+                            این مساله بستگی به امکانات کارگاهی دارد که شما انتخاب می‌کنید. در صورتی که کارگاه انتخابی شما این امکان را داشته باشد و به ما اعلام کرده باشد، شما حین ثبت سفارش در پنل کاربری خود می‌توانید آن کارگاه را انتخاب کرده و با آنها همکاری کنید.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="h-60 bg-olive-900 mt-20 text-white">
+            <!-- Logos - Permits -->
+            <div class="pt-10 flex justify-center items-center">
+                <img src="media/logo3.png" class="h-20">
+            </div>
+            <!-- Links -->
+            <div class="mt-5 text-center">
+                سیاست حریم خصوصی ● قوانین استفاده از سرویس ● تماس با ما ● درباره ما
+            </div>
+            <!-- By Us -->
+            <div class="mt-5 text-center">
+                طراحی شده با عشق توسط لیزران ● 1405 - 2026
+            </div>
+        </div>
+        <script src="./global.js" defer></script>
+    </body>
+</html>
+
+<!-- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch -->

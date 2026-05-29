@@ -1,0 +1,3 @@
+the light should stay the same
+
+I should've added a plane as ground. The background should be an actual object

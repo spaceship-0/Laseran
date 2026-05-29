@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title></title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="src/output.css" />
+        <link rel="stylesheet" href="src/style0.css" />
+    </head>
+    <body class="relative font-[vazir]" dir="rtl">
+        <!-- Backdrop -->
+        <div id="bDrop" class="fixed bg-black/60 inset-0 z-10 items-center justify-center overflow-hidden hidden">
+            <div class="w-120 h-120 bg-white rounded-2xl relative flex flex-col items-center justify-center">
+                <img src="media/close.png" class="h-8 w-8 absolute top-3 left-3 cursor-pointer" onclick="closeLoginWindow();">
+                <!-- Step 1 Phone Number -->
+                <div id="step1" class="text-neutral-700 flex flex-col items-center">
+                    <h1 class="text-3xl">خوش آمدید!</h1>
+                    <h2 class="text-xl">برای ورود، شماره همراه خود را وارد کنید -</h2>
+                    <div class="flex items-center justify-center gap-3 mt-14" dir="ltr">
+                        <img src="media/iran.png" class="h-10">
+                        <span class="text-2xl px-1">+98</span>
+                        <input id="pNumber" class="text-2xl py-2 px-3.5 border-2 border-neutral-300 rounded-xl w-60 tracking-widest text-center">
+                    </div>
+                    <button class="px-7 py-3 mt-16 rounded-2xl border-3 border-amber-600 text-2xl text-amber-600 font-medium hover:bg-amber-600 hover:text-white hover:cursor-pointer transition delay-75 duration-300 ease-in-out"
+                    onclick="goToStep2();">
+                    ادامه
+                    </button>
+                </div>
+                <!-- Verification Code -->
+                <div id="step2" class="text-neutral-700 hidden flex-col items-center">
+                    <h1 class="text-3xl">کد ورود برای شما پیامک شد</h1>
+                    <h2 class="text-xl">لطفا آن را وارد کنید</h2>
+                    <div class="flex items-center justify-center gap-3 mt-14 pl-14" dir="ltr">
+                        <input id="vCode" class="text-2xl py-2 px-3.5 border-2 border-neutral-300 rounded-xl w-40 tracking-widest text-center">
+                        <span class="text-xl px-1 text-amber-600">2:00</span>
+                    </div>
+                    <div class="flex justify-center gap-5">
+                        <button class="px-7 py-3 mt-16 rounded-2xl border-3 border-neutral-400 text-2xl text-neutral-400 font-medium hover:bg-neutral-400 hover:text-white hover:cursor-pointer transition delay-75 duration-300 ease-in-out"
+                        onclick="backToStep1();">
+                        بازگشت
+                        </button>
+                        <button class="px-7 py-3 mt-16 rounded-2xl border-3 border-amber-600 text-2xl text-amber-600 font-medium hover:bg-amber-600 hover:text-white hover:cursor-pointer transition delay-75 duration-300 ease-in-out"
+                        onclick="closeLoginWindow();">
+                        ادامه
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sign in Window -->
+        <!-- Container for the x-borders -->
+        <div class="mx-auto max-w-7xl">
+            <!-- Top row container -->
+            <div
+                class="flex flex-row items-center justify-between pt-4">
+                <!-- Logo -->
+                <a href="/">
+                    <img src="media/logo2.png" class="h-16" />
+                </a>
+                <!-- Navigation -->
+                <nav
+                    class="flex flex-row items-center justify-center font-medium text-lg text-rose-700">
+                    <span
+                        class="px-5 py-3.5 mx-2 transition delay-75 duration-300 ease-in-out bg-white hover:bg-rose-700 hover:text-white rounded-2xl"
+                        >ثبت سفارش</span
+                    >
+                    <span
+                        class="px-5 py-3.5 mx-2 transition delay-75 duration-300 ease-in-out bg-white hover:bg-rose-700 hover:text-white rounded-2xl"
+                        >قیمت‌دهی</span
+                    >
+                    <span
+                        class="px-5 py-3.5 mx-2 transition delay-75 duration-300 ease-in-out bg-white hover:bg-rose-700 hover:text-white rounded-2xl"
+                        >مقالات مفید</span
+                    >
+                    <a href="/about.html">
+                        <span
+                            class="px-5 py-3.5 mx-2 transition delay-75 duration-300 ease-in-out bg-white hover:bg-rose-700 hover:text-white rounded-2xl"
+                            >درباره ما</span
+                        >
+                    </a>
+                    <span
+                        class="px-5 py-3.5 mx-2 transition delay-75 duration-300 ease-in-out bg-white hover:bg-rose-700 hover:text-white rounded-2xl"
+                        >تماس با ما</span
+                    >
+                </nav>
+                <!-- Account -->
+                <div
+                    class="flex flex-row items-center justify-center gap-3">
+                    <img src="media/cart.png" class="h-10 cursor-pointer" />
+                    <img src="media/avatar.png" class="h-10 cursor-pointer" onclick="bDropOn();" />
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard -->
+         <div class="flex gap-10 max-w-7xl mx-auto mt-14">
+            <!-- Dashboard Nav -->
+            <div class="h-80 w-80 rounded-2xl border border-neutral-300 text-neutral-500">
+                <div class="h-full p-10 flex flex-col items-center">
+                    <h1 class="text-xl">روز بخیر!</h1>
+                    <h2 class="text-xl font-medium pt-4">مصطفی مشکینی</h2>
+                    <h2 class="pt-2">۰۹۰۲۶۴۴۸۴۹۵</h2>
+                    <button class="px-4 py-2 mt-12 rounded-2xl border-2 border-rose-700 text-rose-700 font-medium hover:bg-rose-700 hover:text-white cursor-pointer transition delay-75 duration-300 ease-in-out"
+                    onclick="">
+                    ویرایش اطلاعات
+                    </button>
+                    <button class="px-4 py-2 mt-2 rounded-2xl border-2 border-rose-700 text-rose-700 font-medium hover:bg-rose-700 hover:text-white cursor-pointer transition delay-75 duration-300 ease-in-out"
+                    onclick="">
+                    خروج از حساب
+                    </button>
+                </div>
+                <button class="w-80 py-3 mt-6 rounded-2xl border-2 border-rose-700 text-rose-700 text-2xl hover:bg-rose-700 hover:text-white cursor-pointer transition delay-75 duration-300 ease-in-out"
+                onclick="">
+                سفارش جدید
+                </button>
+            </div>
+            <!-- Order Summary -->
+            <div class="h-200 w-full border border-neutral-300 rounded-2xl">
+                
+            </div>
+         </div>
+        <!-- Footer -->
+        <div class="h-60 bg-olive-900 mt-20 text-white">
+            <!-- Logos - Permits -->
+            <div class="pt-10 flex justify-center items-center">
+                <img src="media/logo3.png" class="h-20">
+            </div>
+            <!-- Links -->
+            <div class="mt-5 text-center">
+                سیاست حریم خصوصی ● قوانین استفاده از سرویس ● تماس با ما ● درباره ما
+            </div>
+            <!-- By Us -->
+            <div class="mt-5 text-center">
+                طراحی شده با عشق توسط لیزران ● 1405 - 2026
+            </div>
+        </div>
+        <script src="./global.js" defer></script>
+    </body>
+</html>
+
+<!-- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch -->

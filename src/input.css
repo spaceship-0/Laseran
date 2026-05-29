@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: vazir;
+    src: url(vazir.TTF);
+}
+
+.whyCards {
+    @apply w-56 h-80 flex-initial;
+}
+
+.faqCard {
+    @apply h-21;
+    transition: height 0.3s ease;
+}
+
+.faqCard.expanded {
+    @apply h-60;
+}
+
+.jit {
+    @apply hidden;
+}
